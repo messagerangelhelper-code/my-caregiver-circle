@@ -24,6 +24,12 @@ export default function Account({ premium, intro }) {
       if (mode === "signup") {
         const { data, error: err } = await supabase.auth.signUp({ email: email.trim(), password, options: { emailRedirectTo: redirect } });
         if (err) throw err;
+        // Supabase sends no email when the address already has an account; it returns a user with no identities.
+        if (data.user && Array.isArray(data.user.identities) && data.user.identities.length === 0) {
+          setMode("signin");
+          setError("That email already has a CashCow account, so no new email was sent. Sign in with your CashCow password, or tap \"Forgot your password?\"");
+          return;
+        }
         if (!data.session) setMessage("Almost done. Check your email and tap the link to confirm your account, then sign in here.");
       } else if (mode === "signin") {
         const { error: err } = await supabase.auth.signInWithPassword({ email: email.trim(), password });
