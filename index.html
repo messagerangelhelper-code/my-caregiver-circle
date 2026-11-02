@@ -1,15 +1,546 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="One shared plan for the family caring for a loved one: appointments and who's driving, the medicine list, shared to-dos and an emergency care card." />
-    <meta name="theme-color" content="#1f6f6b" />
-    <title>My Caregiver Circle</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f6f6b'/%3E%3Cpath d='M32 50s-16-9.5-16-21a9 9 0 0 1 16-5.6A9 9 0 0 1 48 29c0 11.5-16 21-16 21z' fill='white'/%3E%3C/svg%3E" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CashCow — Simple Solutions for Everyday Problems</title>
+  <meta name="description" content="CashCow builds apps that make everyday life simpler: spot scams, keep bills on track, and know what's in your food. Plus custom development work." />
+  <link rel="stylesheet" href="style.css" />
+<style>.aa-plans{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}.aa-plans .btn{flex:1 1 140px;text-align:center}</style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="brand">Cash<span>Cow</span><span class="brand-dollar">$</span></a>
+    <div class="links">
+      <a href="index.html#products">Apps</a>
+      <a href="community.html">Community</a>
+      <a href="hire.html">Hire Me</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>Simple solutions for <span>everyday problems</span></h1>
+    <p>
+      CashCow builds apps that take the stress out of daily life: spotting scams,
+      keeping bills on track, knowing what's in your food, and simple remedies from
+      your own kitchen. Each one solves a
+      real problem in a few taps.
+    </p>
+    <div class="hero-actions">
+      <a href="#products" class="btn btn-gold">See the apps</a>
+      <a href="hire.html" class="btn btn-outline-light">Need something built? Hire me</a>
+    </div>
+  </div>
+
+  <main>
+    <h2 class="section-title" id="products">Problems we solve</h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <span class="badge">Live now</span>
+        <svg class="app-preview" viewBox="0 0 140 220" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="136" height="216" rx="18" fill="#f4f7fb" stroke="#333" stroke-width="3"/>
+          <rect x="10" y="14" width="120" height="34" rx="4" fill="#0a2647"/>
+          <text x="70" y="35" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">ScamShield</text>
+          <rect x="10" y="56" width="120" height="6" rx="3" fill="#b31942"/>
+          <rect x="16" y="72" width="108" height="46" rx="6" fill="#ffffff" stroke="#ddd"/>
+          <text x="70" y="99" text-anchor="middle" fill="#555" font-size="8">Check for scam</text>
+          <rect x="16" y="126" width="108" height="20" rx="4" fill="#0a2647"/>
+          <text x="70" y="140" text-anchor="middle" fill="#fff" font-size="8">Check for Scam</text>
+          <rect x="16" y="156" width="108" height="30" rx="6" fill="#f1f8f1" stroke="#2e7d32"/>
+          <text x="70" y="174" text-anchor="middle" fill="#2e7d32" font-size="8">Risk: LOW</text>
+        </svg>
+        <p class="problem">"Is this message a scam?"</p>
+        <h3><a href="scamshield.html" style="color:inherit; text-decoration:none;">ScamShield</a></h3>
+        <p>Check messages, links, phone numbers and photos in seconds, save the evidence, and report it. Built for everyday people and seniors.</p>
+      </div>
+
+      <div class="product-card">
+        <span class="badge">Live now</span>
+        <svg class="app-preview" viewBox="0 0 140 220" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="136" height="216" rx="18" fill="#ffffff" stroke="#0a3161" stroke-width="3"/>
+          <rect x="10" y="14" width="120" height="34" rx="4" fill="#0a3161"/>
+          <text x="70" y="35" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold">ScamGuard Global</text>
+          <rect x="10" y="56" width="120" height="6" rx="3" fill="#b31942"/>
+          <rect x="16" y="72" width="108" height="46" rx="6" fill="#ffffff" stroke="#0a3161" stroke-width="2"/>
+          <text x="70" y="99" text-anchor="middle" fill="#555" font-size="8">Check a link</text>
+          <rect x="16" y="126" width="108" height="20" rx="4" fill="#b31942"/>
+          <text x="70" y="140" text-anchor="middle" fill="#fff" font-size="8">Check Link</text>
+          <rect x="16" y="156" width="108" height="30" rx="6" fill="#ffffff" stroke="#0a3161" stroke-width="2"/>
+          <text x="70" y="174" text-anchor="middle" fill="#0a3161" font-size="8">No threats found</text>
+        </svg>
+        <p class="problem">"Can I trust this stranger?"</p>
+        <h3><a href="scamguard.html" style="color:inherit; text-decoration:none;">ScamGuard Global</a></h3>
+        <p>The same scam protection as ScamShield, in a bold white, red and blue look.</p>
+      </div>
+
+      <div class="product-card">
+        <span class="badge">New</span>
+        <svg class="app-preview" viewBox="0 0 140 220" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="136" height="216" rx="18" fill="#f3f5f8" stroke="#0f2a44" stroke-width="3"/>
+          <rect x="10" y="14" width="120" height="56" rx="8" fill="#0f2a44"/>
+          <text x="20" y="32" fill="#b9c8da" font-size="6" font-weight="bold">DUE THIS MONTH</text>
+          <text x="20" y="50" fill="#ffffff" font-size="14" font-weight="bold">$2,418</text>
+          <rect x="20" y="58" width="100" height="4" rx="2" fill="#23415f"/>
+          <rect x="20" y="58" width="58" height="4" rx="2" fill="#f2a93b"/>
+          <rect x="10" y="78" width="120" height="30" rx="6" fill="#fff4e3" stroke="#f1cf9a"/>
+          <text x="70" y="97" text-anchor="middle" fill="#0f1e2e" font-size="7" font-weight="bold">Electric $142 · Tap to approve</text>
+          <rect x="10" y="116" width="37" height="34" rx="5" fill="#ffffff" stroke="#e3e8ee"/>
+          <rect x="51" y="116" width="38" height="34" rx="5" fill="#ffffff" stroke="#e3e8ee"/>
+          <rect x="93" y="116" width="37" height="34" rx="5" fill="#ffffff" stroke="#e3e8ee"/>
+          <rect x="10" y="156" width="37" height="34" rx="5" fill="#ffffff" stroke="#e3e8ee"/>
+          <rect x="51" y="156" width="38" height="34" rx="5" fill="#ffffff" stroke="#e3e8ee"/>
+          <rect x="93" y="156" width="37" height="34" rx="5" fill="#ffffff" stroke="#e3e8ee"/>
+        </svg>
+        <p class="problem">"Did I pay that bill, and is it real?"</p>
+        <h3><a href="mybillpilot.html" style="color:inherit; text-decoration:none;">MyBillPilot</a></h3>
+        <p>Every bill in one place, a reminder when it's due, and a scam check before you pay. Plus kids' allowances.</p>
+      </div>
+
+      <div class="product-card">
+        <span class="badge">New</span>
+        <svg class="app-preview" viewBox="0 0 140 220" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="136" height="216" rx="18" fill="#f4f8f5" stroke="#1b5e3b" stroke-width="3"/>
+          <rect x="10" y="14" width="120" height="30" rx="4" fill="#1b5e3b"/>
+          <text x="70" y="33" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="bold">My Health Check Scan</text>
+          <rect x="16" y="52" width="108" height="22" rx="5" fill="#1b5e3b"/>
+          <text x="70" y="67" text-anchor="middle" fill="#ffffff" font-size="8">Scan a barcode</text>
+          <rect x="16" y="82" width="108" height="34" rx="6" fill="#fff4d6" stroke="#e0a800"/>
+          <text x="70" y="97" text-anchor="middle" fill="#8a5a00" font-size="7" font-weight="bold">2 ingredients to know</text>
+          <text x="70" y="108" text-anchor="middle" fill="#8a5a00" font-size="6">Red 40 · Yellow 6</text>
+          <rect x="16" y="124" width="108" height="28" rx="6" fill="#ffffff" stroke="#d7e3dc"/>
+          <text x="22" y="141" fill="#17251d" font-size="7">Sugar</text>
+          <rect x="88" y="132" width="30" height="12" rx="6" fill="#fdecea"/>
+          <text x="103" y="141" text-anchor="middle" fill="#b3261e" font-size="6" font-weight="bold">High</text>
+          <rect x="16" y="160" width="108" height="40" rx="6" fill="#e6f4ea" stroke="#2e7d4f"/>
+          <text x="70" y="177" text-anchor="middle" fill="#1d6b3a" font-size="7" font-weight="bold">Healthier option</text>
+          <text x="70" y="190" text-anchor="middle" fill="#1d6b3a" font-size="6">No flagged ingredients</text>
+        </svg>
+        <p class="problem">"What's really in my food?"</p>
+        <h3><a href="myhealthcheckscan.html" style="color:inherit; text-decoration:none;">My Health Check Scan</a></h3>
+        <p>Scan a barcode to see banned ingredients, allergens and healthier options, with official sources.</p>
+      </div>
+
+      <div class="product-card">
+        <span class="badge">New</span>
+        <svg class="app-preview" viewBox="0 0 140 220" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="136" height="216" rx="18" fill="#fbf6f1" stroke="#8c4a26" stroke-width="3"/>
+          <rect x="10" y="14" width="120" height="30" rx="4" fill="#8c4a26"/>
+          <text x="70" y="27" text-anchor="middle" fill="#ffffff" font-size="7" font-weight="bold">My Home Kitchen</text>
+          <text x="70" y="38" text-anchor="middle" fill="#ffffff" font-size="7" font-weight="bold">Remedies</text>
+          <rect x="16" y="52" width="108" height="34" rx="6" fill="#ffffff" stroke="#e8d6c8"/>
+          <text x="24" y="66" fill="#3a2418" font-size="7" font-weight="bold">🍯 Honey &amp; lemon</text>
+          <text x="24" y="78" fill="#2e7d4f" font-size="6">Health-agency advice</text>
+          <rect x="16" y="92" width="108" height="34" rx="6" fill="#ffffff" stroke="#e8d6c8"/>
+          <text x="24" y="106" fill="#3a2418" font-size="7" font-weight="bold">🫚 Fresh ginger tea</text>
+          <text x="24" y="118" fill="#8a5a00" font-size="6">Some research</text>
+          <rect x="16" y="132" width="108" height="30" rx="6" fill="#fff4d6" stroke="#e0a800"/>
+          <text x="70" y="151" text-anchor="middle" fill="#8a5a00" font-size="6" font-weight="bold">Check first: taking medicines?</text>
+          <rect x="16" y="170" width="108" height="30" rx="6" fill="#8c4a26"/>
+          <text x="70" y="189" text-anchor="middle" fill="#ffffff" font-size="7" font-weight="bold">🥤 Power Smoothie</text>
+        </svg>
+        <p class="problem">"What can I make at home to feel better?"</p>
+        <h3><a href="myhomekitchenremedies.html" style="color:inherit; text-decoration:none;">My Home Kitchen Remedies</a></h3>
+        <p>Simple remedies from your own kitchen, each with an honest evidence rating, safety checks and official sources.</p>
+      </div>
+
+      <div class="product-card">
+        <span class="badge">New</span>
+        <svg class="app-preview" viewBox="0 0 140 220" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="136" height="216" rx="18" fill="#f3f6fa" stroke="#2b4c7e" stroke-width="3"/>
+          <rect x="10" y="14" width="120" height="30" rx="4" fill="#2b4c7e"/>
+          <text x="70" y="33" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="bold">My Letter Helper</text>
+          <rect x="16" y="52" width="108" height="26" rx="6" fill="#ffffff" stroke="#d6dde8"/>
+          <text x="24" y="68" fill="#18212e" font-size="7" font-weight="bold">Dispute a credit card charge</text>
+          <rect x="16" y="84" width="108" height="26" rx="6" fill="#ffffff" stroke="#d6dde8"/>
+          <text x="24" y="100" fill="#18212e" font-size="7" font-weight="bold">Ask for a refund</text>
+          <rect x="16" y="116" width="108" height="56" rx="4" fill="#fffdf8" stroke="#e6e0d2"/>
+          <rect x="24" y="126" width="70" height="4" rx="2" fill="#c9ced6"/>
+          <rect x="24" y="136" width="90" height="4" rx="2" fill="#c9ced6"/>
+          <rect x="24" y="146" width="40" height="6" rx="2" fill="#ffe58a"/>
+          <rect x="68" y="147" width="46" height="4" rx="2" fill="#c9ced6"/>
+          <rect x="24" y="158" width="80" height="4" rx="2" fill="#c9ced6"/>
+          <rect x="16" y="180" width="108" height="24" rx="6" fill="#2b4c7e"/>
+          <text x="70" y="196" text-anchor="middle" fill="#ffffff" font-size="7" font-weight="bold">Print · Email · Copy</text>
+        </svg>
+        <p class="problem">"How do I put this in writing?"</p>
+        <h3><a href="myletterhelper.html" style="color:inherit; text-decoration:none;">My Letter Helper</a></h3>
+        <p>Ready-to-send letters for billing disputes, refunds, cancellations, debt collectors and landlords. Fill in the blanks, then print or email.</p>
+      </div>
+
+      <div class="product-card">
+        <span class="badge">New</span>
+        <svg class="app-preview" viewBox="0 0 140 220" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="136" height="216" rx="18" fill="#f3f6fa" stroke="#9b2c2c" stroke-width="3"/>
+          <rect x="10" y="14" width="120" height="30" rx="4" fill="#9b2c2c"/>
+          <text x="70" y="33" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="bold">My Recall Check</text>
+          <rect x="16" y="52" width="108" height="34" rx="6" fill="#ffffff" stroke="#d6dde8"/>
+          <text x="24" y="66" fill="#18212e" font-size="7" font-weight="bold">2012 Honda Civic</text>
+          <text x="24" y="78" fill="#b3261e" font-size="7" font-weight="bold">2 safety recalls</text>
+          <rect x="16" y="92" width="108" height="26" rx="6" fill="#fdecea" stroke="#b3261e"/>
+          <text x="70" y="108" text-anchor="middle" fill="#b3261e" font-size="7" font-weight="bold">Do not drive · Park outside</text>
+          <rect x="16" y="124" width="108" height="40" rx="6" fill="#ffffff" stroke="#d6dde8"/>
+          <rect x="22" y="132" width="22" height="9" rx="4" fill="#9b2c2c"/>
+          <text x="33" y="139" text-anchor="middle" fill="#ffffff" font-size="5" font-weight="bold">NEW</text>
+          <text x="24" y="154" fill="#18212e" font-size="6">Air bags: inflator module</text>
+          <rect x="16" y="172" width="108" height="30" rx="6" fill="#e6f4ea" stroke="#2e7d4f"/>
+          <text x="70" y="191" text-anchor="middle" fill="#1d6b3a" font-size="7" font-weight="bold">My Garage: checked automatically</text>
+        </svg>
+        <p class="problem">"Is my car safe to drive?"</p>
+        <h3><a href="myrecallcheck.html" style="color:inherit; text-decoration:none;">My Recall Check</a></h3>
+        <p>Free safety recall checks by VIN or year, make and model, using official NHTSA data. Saved vehicles are re-checked automatically.</p>
+      </div>
+
+      <div class="product-card">
+        <span class="badge">New</span>
+        <svg class="app-preview" viewBox="0 0 140 220" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="136" height="216" rx="18" fill="#f3f6fa" stroke="#1f6f6b" stroke-width="3"/>
+          <rect x="10" y="14" width="120" height="30" rx="4" fill="#1f6f6b"/>
+          <text x="70" y="33" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="bold">My Caregiver Circle</text>
+          <rect x="16" y="52" width="108" height="20" rx="6" fill="#ffffff" stroke="#d6dde8"/>
+          <text x="24" y="65" fill="#18212e" font-size="7" font-weight="bold">Mom · Chris, Dana, Sam</text>
+          <rect x="16" y="78" width="108" height="40" rx="6" fill="#ffffff" stroke="#d6dde8"/>
+          <text x="24" y="91" fill="#18212e" font-size="7" font-weight="bold">Heart doctor · Tue 2:30</text>
+          <text x="24" y="103" fill="#1f6f6b" font-size="6" font-weight="bold">Who's taking her: Dana</text>
+          <rect x="16" y="124" width="108" height="36" rx="6" fill="#ffffff" stroke="#d6dde8"/>
+          <rect x="22" y="132" width="9" height="9" rx="2" fill="#1f6f6b"/>
+          <text x="36" y="140" fill="#18212e" font-size="6">Pick up prescriptions</text>
+          <rect x="22" y="146" width="9" height="9" rx="2" fill="none" stroke="#1f6f6b"/>
+          <text x="36" y="154" fill="#18212e" font-size="6">Groceries · Sam</text>
+          <rect x="16" y="168" width="108" height="34" rx="6" fill="#fdecea" stroke="#b3261e"/>
+          <text x="70" y="182" text-anchor="middle" fill="#b3261e" font-size="7" font-weight="bold">Emergency care card</text>
+          <text x="70" y="194" text-anchor="middle" fill="#b3261e" font-size="6">Allergies · Doctors · Meds</text>
+        </svg>
+        <p class="problem">"Who's taking Mom to the doctor?"</p>
+        <h3><a href="mycaregivercircle.html" style="color:inherit; text-decoration:none;">My Caregiver Circle</a></h3>
+        <p>One shared plan for the family caring for a loved one: appointments, the medicine list, shared to-dos and an emergency care card.</p>
+      </div>
+
+      <div class="product-card">
+        <span class="badge">New</span>
+        <svg class="app-preview" viewBox="0 0 140 220" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="136" height="216" rx="18" fill="#f3f6fa" stroke="#b45309" stroke-width="3"/>
+          <rect x="10" y="14" width="120" height="30" rx="4" fill="#b45309"/>
+          <text x="70" y="33" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="bold">My Fix-It Helper</text>
+          <rect x="16" y="52" width="108" height="20" rx="6" fill="#ffffff" stroke="#d6dde8"/>
+          <text x="24" y="65" fill="#18212e" font-size="7" font-weight="bold">Stop a running toilet</text>
+          <rect x="16" y="78" width="108" height="22" rx="6" fill="#fff4d6" stroke="#f0cf7a"/>
+          <text x="70" y="92" text-anchor="middle" fill="#7a4f00" font-size="6" font-weight="bold">Safety first: turn off the water</text>
+          <rect x="16" y="106" width="108" height="50" rx="6" fill="#ffffff" stroke="#d6dde8"/>
+          <text x="24" y="119" fill="#18212e" font-size="6" font-weight="bold">Toilet flapper</text>
+          <rect x="22" y="126" width="46" height="20" rx="4" fill="none" stroke="#b45309"/>
+          <text x="45" y="139" text-anchor="middle" fill="#b45309" font-size="5.5" font-weight="bold">Home Depot</text>
+          <rect x="72" y="126" width="46" height="20" rx="4" fill="none" stroke="#b45309"/>
+          <text x="95" y="139" text-anchor="middle" fill="#b45309" font-size="5.5" font-weight="bold">Lowe's</text>
+          <rect x="16" y="164" width="108" height="38" rx="6" fill="#fdf1e3" stroke="#b45309"/>
+          <text x="70" y="180" text-anchor="middle" fill="#b45309" font-size="7" font-weight="bold">Home checklist: Fall</text>
+          <text x="70" y="192" text-anchor="middle" fill="#5a6575" font-size="6">Gutters · Furnace · Faucets</text>
+        </svg>
+        <p class="problem">"Can I fix this myself?"</p>
+        <h3><a href="myfixithelper.html" style="color:inherit; text-decoration:none;">My Fix-It Helper</a></h3>
+        <p>Simple step-by-step fixes for your home and car, with the parts list, store links, and when to call a pro.</p>
+      </div>
+
+      <div class="product-card">
+        <span class="badge">New</span>
+        <svg class="app-preview" viewBox="0 0 140 220" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="136" height="216" rx="18" fill="#f3f6fa" stroke="#5b3fa8" stroke-width="3"/>
+          <rect x="10" y="14" width="120" height="30" rx="4" fill="#5b3fa8"/>
+          <text x="70" y="33" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="bold">My Shopping Helper</text>
+          <rect x="16" y="52" width="108" height="18" rx="6" fill="#ffffff" stroke="#d6dde8"/>
+          <text x="24" y="64" fill="#18212e" font-size="7">paper towels</text>
+          <rect x="16" y="78" width="52" height="18" rx="4" fill="none" stroke="#5b3fa8"/>
+          <text x="42" y="90" text-anchor="middle" fill="#5b3fa8" font-size="6" font-weight="bold">Walmart</text>
+          <rect x="72" y="78" width="52" height="18" rx="4" fill="none" stroke="#5b3fa8"/>
+          <text x="98" y="90" text-anchor="middle" fill="#5b3fa8" font-size="6" font-weight="bold">Amazon</text>
+          <rect x="16" y="100" width="52" height="18" rx="4" fill="none" stroke="#5b3fa8"/>
+          <text x="42" y="112" text-anchor="middle" fill="#5b3fa8" font-size="6" font-weight="bold">H-E-B</text>
+          <rect x="72" y="100" width="52" height="18" rx="4" fill="none" stroke="#5b3fa8"/>
+          <text x="98" y="112" text-anchor="middle" fill="#5b3fa8" font-size="6" font-weight="bold">Dollar Tree</text>
+          <rect x="16" y="126" width="108" height="40" rx="6" fill="#ffffff" stroke="#d6dde8"/>
+          <text x="24" y="140" fill="#18212e" font-size="6.5" font-weight="bold">Chicken breast</text>
+          <text x="24" y="154" fill="#1d6b3a" font-size="6" font-weight="bold">Lowest: $2.99 at Kroger</text>
+          <rect x="16" y="174" width="108" height="28" rx="6" fill="#f0ebfa" stroke="#5b3fa8"/>
+          <text x="70" y="191" text-anchor="middle" fill="#5b3fa8" font-size="6.5" font-weight="bold">Time to restock: paper towels</text>
+        </svg>
+        <p class="problem">"Who has it, and where is it cheapest?"</p>
+        <h3><a href="myshoppinghelper.html" style="color:inherit; text-decoration:none;">My Shopping Helper</a></h3>
+        <p>Type it once and check Amazon, Walmart, Target, H-E-B, Kroger, Wayfair, dollar stores and more, with one list for every store.</p>
+      </div>
+
+      <div class="product-card">
+        <span class="badge badge-soon">In development</span>
+        <svg class="app-preview" viewBox="0 0 140 220" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="136" height="216" rx="18" fill="#eef5f5" stroke="#333" stroke-width="3"/>
+          <rect x="10" y="14" width="120" height="120" rx="8" fill="#cde4e0"/>
+          <path d="M20 100 L50 60 L80 90 L100 50 L120 80" stroke="#0f6e56" stroke-width="3" fill="none"/>
+          <circle cx="70" cy="80" r="8" fill="#0f6e56"/>
+          <rect x="16" y="144" width="108" height="20" rx="4" fill="#0f6e56"/>
+          <text x="70" y="158" text-anchor="middle" fill="#fff" font-size="8">Request Ride</text>
+          <rect x="16" y="174" width="108" height="30" rx="6" fill="#ffffff" stroke="#ddd"/>
+          <text x="70" y="192" text-anchor="middle" fill="#555" font-size="8">Driver arriving: 4 min</text>
+        </svg>
+        <p class="problem">"Can I count on my ride?"</p>
+        <h3><a href="encompass.html" style="color:inherit; text-decoration:none;">Encompass</a></h3>
+        <p>Rideshare built around reliability and trust between drivers and riders.</p>
+      </div>
+
+      <div class="product-card">
+        <span class="badge badge-soon">In development</span>
+        <svg class="app-preview" viewBox="0 0 140 220" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="136" height="216" rx="18" fill="#0b0b14" stroke="#333" stroke-width="3"/>
+          <rect x="40" y="20" width="60" height="140" rx="6" fill="none" stroke="#3C3489" stroke-width="4"/>
+          <circle cx="70" cy="90" r="34" fill="none" stroke="#26215C" stroke-width="6"/>
+          <circle cx="70" cy="90" r="24" fill="none" stroke="#534AB7" stroke-width="5"/>
+          <circle cx="70" cy="90" r="14" fill="none" stroke="#D4A94D" stroke-width="4"/>
+          <circle cx="70" cy="90" r="5" fill="#F5C4B3"/>
+          <text x="70" y="180" text-anchor="middle" fill="#D4A94D" font-size="8">Enter Community Room</text>
+        </svg>
+        <p class="problem">"Where can artists create and connect?"</p>
+        <h3><a href="integrity-records.html" style="color:inherit; text-decoration:none;">Integrity Records</a></h3>
+        <p>A workspace for artists, with a Gospel-connected community space.</p>
+      </div>
+
+    </div>
+
+    <h2 class="section-title" id="all-access" style="margin-top:60px;">CashCow All Access</h2>
+    <p style="text-align:center; max-width:600px; margin:-20px auto 32px; color:#555;">
+      One membership that unlocks Premium in every CashCow app you sign in to, including every new app we add.
+      One account, one price.
+    </p>
+
+    <div class="product-card all-access-card">
+      <span class="badge badge-gold">Now open</span>
+      <h3 style="margin:8px 0 6px;">One membership, every app</h3>
+      <ul class="all-access-list">
+        <li>ScamShield Premium: unlimited scam checks in ScamShield and ScamGuard Global, plus Email Guard</li>
+        <li>Premium in My Health Check Scan, My Home Kitchen Remedies, My Letter Helper, My Recall Check, My Caregiver Circle, My Fix-It Helper and My Shopping Helper</li>
+        <li>Every new CashCow app included as it launches</li>
+        <li>One CashCow account that works on all your devices</li>
+      </ul>
+      <div class="aa-plans">
+        <a class="btn btn-gold" href="cart.html?plan=rent">$29 / month</a>
+        <a class="btn btn-gold" href="cart.html?plan=lease">$249 / year</a>
+        <a class="btn btn-gold" href="cart.html?plan=buy">$499 once</a>
+      </div>
+      <p style="margin:14px 0 0; font-size:14px; color:#666;">
+        Same price as ScamShield Premium alone, with every other app included. You can also buy it inside any app's Premium page.
+        Prefer just one app? Each has its own Premium:
+        <a href="mybillpilot.html">MyBillPilot</a> from $4.99/month (sold separately, no sign-in needed),
+        <a href="myhealthcheckscan.html">My Health Check Scan</a> from $2.99/month,
+        <a href="myhomekitchenremedies.html">My Home Kitchen Remedies</a>,
+        <a href="myletterhelper.html">My Letter Helper</a>,
+        <a href="myrecallcheck.html">My Recall Check</a>,
+        <a href="myfixithelper.html">My Fix-It Helper</a> and
+        <a href="myshoppinghelper.html">My Shopping Helper</a> from $1.99/month, and
+        <a href="mycaregivercircle.html">My Caregiver Circle</a> from $2.99/month.
+      </p>
+    </div>
+
+    <div class="product-card" style="margin-top:24px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px; text-align:left;">
+      <div style="flex:1 1 320px;">
+        <span class="badge badge-gold">Own the business</span>
+        <h3 style="margin:8px 0 6px;">🏢 Buy an app outright</h3>
+        <p style="margin:0;">The whole app — code, brand, domain and customers. Priced on each app's revenue and growth. (Individual apps only; the CashCow platform itself isn't for sale.)</p>
+      </div>
+      <a class="btn btn-gold" href="hire.html?interest=own-the-app">Make an inquiry</a>
+    </div>
+    <p class="plan-error" id="planError" style="display:none; text-align:center; color:#c0392b; max-width:560px; margin:16px auto 0;"></p>
+  </main>
+
+  <div class="reviews-section">
+    <h2 class="section-title">Reviews</h2>
+
+    <form id="review-form">
+      <label for="rev-name">Your name</label>
+      <input type="text" id="rev-name" required maxlength="80" />
+
+      <label for="rev-product">Which product?</label>
+      <select id="rev-product">
+        <option>General</option>
+        <option>ScamShield</option>
+        <option>Encompass</option>
+        <option>Integrity Records</option>
+        <option>ScamGuard Global</option>
+        <option>MyBillPilot</option>
+        <option>My Health Check Scan</option>
+        <option>My Home Kitchen Remedies</option>
+        <option>My Letter Helper</option>
+        <option>My Recall Check</option>
+        <option>My Caregiver Circle</option>
+        <option>My Fix-It Helper</option>
+        <option>My Shopping Helper</option>
+      </select>
+
+      <label for="rev-rating">Rating</label>
+      <select id="rev-rating">
+        <option value="5">5 - Excellent</option>
+        <option value="4">4 - Good</option>
+        <option value="3">3 - Average</option>
+        <option value="2">2 - Poor</option>
+        <option value="1">1 - Very Poor</option>
+      </select>
+
+      <label for="rev-comment">Your review</label>
+      <textarea id="rev-comment" required maxlength="1000"></textarea>
+
+      <!-- Honeypot: hidden from real visitors, but simple bots fill every field. If it's non-empty, the submit is silently dropped. -->
+      <input
+        type="text" id="rev-hp" name="website" autocomplete="off" tabindex="-1"
+        aria-hidden="true"
+        style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;"
+      />
+
+      <button type="submit" class="btn btn-gold">Submit Review</button>
+      <p id="review-status" class="subtext"></p>
+    </form>
+
+    <div id="reviews-list" class="reviews-list"></div>
+  </div>
+
+  <div class="hire-section">
+    <h2>Need something built?</h2>
+    <p>
+      Every product here was designed, built, and deployed from the
+      ground up. If you need a custom app, a new feature added to one
+      of these, or a full build from scratch — let's talk.
+    </p>
+    <a href="hire.html" class="btn btn-gold">Start a project</a>
+  </div>
+
+  <footer>
+    &copy; 2026 CashCow. All rights reserved. · <a href="terms.html" style="color:inherit;">Terms of Service</a><br><span style="font-size:12px; opacity:0.7;">Built with Claude</span>
+  </footer>
+
+  <script>
+    const REVIEWS_API = "https://cashcow-reviews-api.onrender.com"; // update once deployed
+
+    // Reviews come from other visitors, so their text must never be trusted
+    // as markup — escape it before it goes anywhere near innerHTML, or a
+    // review comment like "<img src=x onerror=...>" would run as script in
+    // every other visitor's browser (a stored XSS attack).
+    function escapeHtml(str) {
+      const div = document.createElement("div");
+      div.textContent = String(str ?? "");
+      return div.innerHTML;
+    }
+
+    async function loadReviews() {
+      const list = document.getElementById("reviews-list");
+      try {
+        const res = await fetch(`${REVIEWS_API}/api/reviews`);
+        const data = await res.json();
+        if (!data.reviews || data.reviews.length === 0) {
+          list.innerHTML = '<p class="subtext">No reviews yet — be the first to leave one.</p>';
+          return;
+        }
+        list.innerHTML = data.reviews.map(r => `
+          <div class="review-card">
+            <div class="review-stars">${"★".repeat(r.rating)}${"☆".repeat(5 - r.rating)}</div>
+            <p class="review-comment">"${escapeHtml(r.comment)}"</p>
+            <p class="review-meta">— ${escapeHtml(r.name)}, on ${escapeHtml(r.product)}</p>
+          </div>
+        `).join("");
+      } catch (err) {
+        list.innerHTML = '<p class="subtext">Reviews are temporarily unavailable.</p>';
+      }
+    }
+
+    const reviewHp = document.getElementById("rev-hp");
+    let lastReviewSubmit = 0;
+
+    document.getElementById("review-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const status = document.getElementById("review-status");
+
+      // Honeypot tripped — quietly pretend it worked, skip the request.
+      if (reviewHp.value.trim() !== "") {
+        status.textContent = "Thank you for your review!";
+        document.getElementById("review-form").reset();
+        return;
+      }
+
+      // Simple per-browser throttle against accidental double-submits.
+      if (Date.now() - lastReviewSubmit < 60_000) {
+        status.textContent = "Please wait a moment before submitting another review.";
+        return;
+      }
+
+      const payload = {
+        name: document.getElementById("rev-name").value.trim(),
+        product: document.getElementById("rev-product").value,
+        rating: parseInt(document.getElementById("rev-rating").value, 10),
+        comment: document.getElementById("rev-comment").value.trim(),
+      };
+
+      if (!payload.name || !payload.comment) {
+        status.textContent = "Please fill in your name and review.";
+        return;
+      }
+
+      status.textContent = "Submitting...";
+
+      try {
+        const res = await fetch(`${REVIEWS_API}/api/reviews`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || data.success === false) {
+          throw new Error(data.error || "Submission failed");
+        }
+        lastReviewSubmit = Date.now();
+        status.textContent = "Thank you for your review!";
+        document.getElementById("review-form").reset();
+        loadReviews();
+      } catch (err) {
+        status.textContent = "Couldn't submit right now — please try again shortly.";
+      }
+    });
+
+    loadReviews();
+  </script>
+
+  <!--
+    One-click checkout: each pricing button starts a Stripe Checkout
+    session and redirects straight to it, instead of sending the visitor
+    to a separate cart page first. cart.html still exists and works for
+    anyone who lands on it directly (e.g. a saved link), it's just no
+    longer the default path from the homepage.
+  -->
+  <script>
+    document.querySelectorAll(".plan-btn").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const planError = document.getElementById("planError");
+        planError.style.display = "none";
+        const originalText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = "Redirecting to secure payment…";
+
+        try {
+          const res = await fetch(`${REVIEWS_API}/api/create-checkout-session`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ plan: btn.dataset.plan }),
+          });
+          if (!res.ok) {
+            const body = await res.json().catch(() => ({}));
+            throw new Error(body.detail || "Could not start checkout.");
+          }
+          const data = await res.json();
+          window.location.href = data.url;
+        } catch (err) {
+          planError.textContent = err.message || "Something went wrong — please try again.";
+          planError.style.display = "block";
+          btn.disabled = false;
+          btn.textContent = originalText;
+        }
+      });
+    });
+  </script>
+
+  <script src="receptionist.js" defer></script>
+</body>
 </html>
