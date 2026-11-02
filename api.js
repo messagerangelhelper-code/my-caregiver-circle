@@ -39,3 +39,4 @@ export const newCode = (id) => call(`/api/care/circles/${id}/code`, {});
 export const removeMember = (id, userId) => call(`/api/care/circles/${id}/remove`, { user_id: userId });
 export const leaveCircle = (id) => call(`/api/care/circles/${id}/leave`, {});
 export const deleteCircle = (id) => call(`/api/care/circles/${id}/delete`, {});
+export const sendCheckIn = (id, payload) => call(`/api/care/circles/${id}/alert`, payload);

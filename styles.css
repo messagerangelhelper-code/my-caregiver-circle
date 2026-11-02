@@ -204,3 +204,32 @@ summary { cursor: pointer; font-weight: 700; color: var(--main); padding: 8px 0;
   .card-line { grid-template-columns: 180px 1fr; gap: 12px; }
   .card-line dt { color: #333; }
 }
+
+/* CashCow All Access option on the Premium page */
+.all-access { margin-top: 16px; padding-top: 14px; border-top: 1px dashed currentColor; border-top-color: rgba(127,127,127,.35); }
+.all-access h3 { margin: 0 0 4px; font-size: 1.05rem; }
+
+/* One-tap check-in */
+.checkin .checkin-big { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0 8px; }
+.ck { font: inherit; font-weight: 800; font-size: 1.05rem; border-radius: 14px; padding: 16px 10px; min-height: 64px; border: 2px solid transparent; cursor: pointer; }
+.ck:disabled { opacity: 0.6; cursor: default; }
+.ck.ok { background: #e6f4ea; color: #1b5e20; border-color: #66bb6a; }
+.ck.help { background: #fdecea; color: #a4161a; border-color: #e57373; }
+.ck.crisis { width: 100%; margin-top: 10px; background: #f3e8fd; color: #5b2a86; border-color: #b388eb; }
+.checkin .toggle { display: flex; gap: 8px; align-items: center; margin: 4px 0; }
+.checkin .toggle input { width: 20px; height: 20px; flex: none; }
+.callout-911 { background: #fdecea; border-radius: 10px; padding: 8px 12px; margin: 8px 0; }
+.mood-title { margin: 16px 0 6px; font-size: 1rem; }
+.moods { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.mood { font: inherit; display: grid; justify-items: center; gap: 2px; padding: 8px 2px; border-radius: 12px; border: 2px solid rgba(127,127,127,.25); background: transparent; color: inherit; cursor: pointer; min-height: 64px; }
+.mood span:first-child { font-size: 1.6rem; line-height: 1; }
+.mood-name { font-size: 0.72rem; }
+.checkin-msg { margin: 10px 0 0; font-weight: 700; }
+.crisis-card { border: 3px solid #b388eb; background: #faf5ff; }
+.crisis-card .button-row a { text-decoration: none; text-align: center; }
+.row-main.static { cursor: default; }
+.checkin-row.s-help .row-title { color: #a4161a; }
+.checkin-row.s-crisis .row-title { color: #5b2a86; }
+.refill-btn { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; flex: none; text-decoration: none; font-weight: 800; font-size: 0.9rem; border: 2px solid currentColor; border-radius: 10px; padding: 6px 10px; margin-left: 6px; min-height: 44px; }
+.refill-btn .rx { font-size: 0.7rem; font-weight: 600; opacity: 0.8; }
+@media (max-width: 360px) { .checkin .checkin-big { grid-template-columns: 1fr; } }

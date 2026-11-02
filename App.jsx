@@ -5,6 +5,7 @@ import Account from "./Account.jsx";
 import Premium from "./Premium.jsx";
 import { isPremium, checkPremiumOnce, syncAccount } from "./premium.js";
 import * as api from "./api.js";
+import CheckIn from "./CheckIn.jsx";
 
 // ---------- what each kind of item holds ----------
 const KINDS = {
@@ -28,7 +29,10 @@ const KINDS = {
       { id: "purpose", label: "What it's for", placeholder: "Blood pressure" },
       { id: "prescriber", label: "Prescribed by", placeholder: "Dr. Patel" },
       { id: "pharmacy", label: "Pharmacy", placeholder: "Walgreens on Main St" },
-      { id: "notes", label: "Notes", type: "textarea", placeholder: "Refill due mid-month" },
+      { id: "pharmacy_phone", label: "Pharmacy phone", type: "tel", placeholder: "214-555-0100" },
+      { id: "rx_number", label: "Rx number (on the label)", placeholder: "RX 1234567" },
+      { id: "refill_date", label: "Next refill due", type: "date" },
+      { id: "notes", label: "Notes", type: "textarea", placeholder: "Ask about the generic" },
     ],
   },
   todo: {
@@ -137,7 +141,7 @@ function ItemRow({ kind, item, members, onOpen, onToggle }) {
   let line1 = d.title || d.name;
   let line2 = "";
   if (kind === "appointment") line2 = [niceDate(d.date), niceTime(d.time), d.place].filter(Boolean).join(" · ");
-  if (kind === "medicine") line2 = [d.dose, d.when].filter(Boolean).join(" · ");
+  if (kind === "medicine") line2 = [d.dose, d.when, d.refill_date && `Refill ${niceDate(d.refill_date)}`].filter(Boolean).join(" · ");
   if (kind === "todo") line2 = d.due ? `Due ${niceDate(d.due)}` : "";
   const overdue = kind === "todo" && !item.done && d.due && d.due < isoToday();
   return (
@@ -150,7 +154,18 @@ function ItemRow({ kind, item, members, onOpen, onToggle }) {
         {line2 && <span className={`row-sub${overdue ? " overdue" : ""}`}>{line2}</span>}
         {person && <span className="row-who">{KINDS[kind].who}: {person.name}</span>}
       </button>
+      {kind === "medicine" && d.pharmacy_phone && <RefillCall d={d} />}
     </li>
+  );
+}
+
+// One tap to call the pharmacy for a refill, with the Rx number right there to read out.
+function RefillCall({ d }) {
+  const tel = String(d.pharmacy_phone).replace(/[^0-9+]/g, "");
+  return (
+    <a className="refill-btn" href={`tel:${tel}`} aria-label={`Call ${d.pharmacy || "the pharmacy"} to refill ${d.name}`}>
+      📞 Refill{d.rx_number ? <span className="rx">Rx {d.rx_number}</span> : null}
+    </a>
   );
 }
 
@@ -267,7 +282,7 @@ export default function App() {
   const items = circle?.items || [];
   const isOwner = circle?.me?.role === "owner";
   const byKind = useMemo(() => {
-    const out = { appointment: [], medicine: [], todo: [] };
+    const out = { appointment: [], medicine: [], todo: [], checkin: [] };
     items.forEach((i) => out[i.kind]?.push(i));
     out.appointment.sort((a, b) => apptKey(a).localeCompare(apptKey(b)));
     out.todo.sort((a, b) => (a.done - b.done) || String(a.data.due || "9999").localeCompare(String(b.data.due || "9999")));
@@ -303,6 +318,9 @@ export default function App() {
   const weekOut = isoIn(7);
   const upcoming = byKind.appointment.filter((a) => a.data.date && a.data.date >= today && a.data.date <= weekOut);
   const openTodos = byKind.todo.filter((t) => !t.done);
+  const refillsDue = byKind.medicine.filter((m) => m.data.refill_date && m.data.refill_date <= weekOut)
+    .sort((a, b) => a.data.refill_date.localeCompare(b.data.refill_date));
+  const refreshCircle = useCallback(() => { if (circleId) loadCircle(circleId, true); }, [circleId, loadCircle]);
 
   // ---------- screens ----------
   let body;
@@ -370,6 +388,14 @@ export default function App() {
 
         {tab === "today" && (
           <>
+            <CheckIn circleId={circleId} checkins={byKind.checkin} onSent={refreshCircle} />
+            {refillsDue.length > 0 && (
+              <section className="card">
+                <h2>💊 Refills due soon</h2>
+                <ul className="rows">{refillsDue.map((i) => <ItemRow key={i.id} kind="medicine" item={i} members={members} onOpen={(it) => setEditing({ kind: "medicine", item: it })} />)}</ul>
+                <p className="muted small">Tap 📞 Refill to call the pharmacy. Read them the Rx number from the label.</p>
+              </section>
+            )}
             <section className="card">
               <h2>Next 7 days</h2>
               {upcoming.length ? (
